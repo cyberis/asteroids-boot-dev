@@ -11,6 +11,8 @@ def main():
     ## Initialize pygame
     pygame.init()
     screen = pygame.display.set_mode((SCREEN_WIDTH, SCREEN_HEIGHT))
+    clock = pygame.time.Clock()
+    dt = 0
     
     # Main game loop
     while True:
@@ -22,6 +24,8 @@ def main():
         
         screen.fill("black")
         pygame.display.flip()
+        dt = clock.tick(60) / 1000  # Delta time in seconds
+        # print(f"Delta time: {dt:.4f} seconds")
 
 
 if __name__ == "__main__":
