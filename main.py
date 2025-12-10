@@ -1,3 +1,4 @@
+from player import Player
 import pygame
 from constants import SCREEN_WIDTH, SCREEN_HEIGHT
 from logger import log_state
@@ -14,6 +15,9 @@ def main():
     clock = pygame.time.Clock()
     dt = 0
     
+    # Add a player instance
+    player = Player(SCREEN_WIDTH / 2, SCREEN_HEIGHT / 2)
+    
     # Main game loop
     while True:
         log_state()
@@ -22,7 +26,11 @@ def main():
                 pygame.quit()
                 return
         
+        # Update Sprites
+        player.update(dt)
+        
         screen.fill("black")
+        player.draw(screen)
         pygame.display.flip()
         dt = clock.tick(60) / 1000  # Delta time in seconds
         # print(f"Delta time: {dt:.4f} seconds")
