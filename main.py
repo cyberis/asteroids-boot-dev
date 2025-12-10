@@ -58,6 +58,15 @@ def main():
                 sys.exit()
                 return
         
+        # Check for collisions between shots and asteroids
+        for asteroid in asteroids:
+            for shot in shots:
+                if shot.collides_with(asteroid):
+                    log_event("asteroid_shot")
+                    shot.kill()
+                    asteroid.split()
+        
+            
         # Update the screen
         screen.fill("black")
         
