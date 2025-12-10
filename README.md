@@ -1,6 +1,6 @@
 # Asteroids (Boot.dev Edition)
 
-This is a stripped down version of Asteroids to complete the Boot.dev project, "Build Asteroids using Python and Pygame
+This is a stripped down version of Asteroids to complete the Boot.dev project, "Build Asteroids using Python and Pygame"
 
 Here are some more things to do to round this out:
  - Add a scoring system
@@ -15,7 +15,7 @@ Here are some more things to do to round this out:
  - Add a shield power-up
  - Add bombs that can be dropped
  
-And here are evem more to make it like the classical game
+And here are evem more to make it like the classical game:
  - Add pew pew sounds
  - Make the shots much smaller
  - Add flying saucers that also shoot
