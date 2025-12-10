@@ -14,8 +14,13 @@ def main():
     screen = pygame.display.set_mode((SCREEN_WIDTH, SCREEN_HEIGHT))
     clock = pygame.time.Clock()
     dt = 0
+
+    # Crate our sprite groups
+    updatable = pygame.sprite.Group()
+    drawable = pygame.sprite.Group()
     
     # Add a player instance
+    Player.containers = (updatable, drawable)
     player = Player(SCREEN_WIDTH / 2, SCREEN_HEIGHT / 2)
     
     # Main game loop
@@ -27,13 +32,20 @@ def main():
                 return
         
         # Update Sprites
-        player.update(dt)
+        updatable.update(dt)
         
         screen.fill("black")
-        player.draw(screen)
+        
+        # Draw Sprites
+        for sprite in drawable:
+            sprite.draw(screen)
+        
+        # Update the display
         pygame.display.flip()
+        
+        # Cap the frame rate and calculate delta time
         dt = clock.tick(60) / 1000  # Delta time in seconds
-        # print(f"Delta time: {dt:.4f} seconds")
+
 
 
 if __name__ == "__main__":
