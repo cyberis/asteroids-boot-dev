@@ -45,6 +45,7 @@ def main():
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
                 pygame.quit()
+                sys.exit()
                 return
         
         # Update Sprites
@@ -55,6 +56,7 @@ def main():
             if player.collides_with(asteroid):
                 log_event("player_hit")
                 print("Game over!")
+                pygame.quit()
                 sys.exit()
                 return
         
